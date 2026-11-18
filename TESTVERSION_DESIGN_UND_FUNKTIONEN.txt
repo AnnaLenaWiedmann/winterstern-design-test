@@ -1,0 +1,52 @@
+WINTERSTERN – TESTFASSUNG DES NEUEN WINTER-ARCHIV-DESIGNS
+18. November 2026
+
+DIESE VERSION NICHT DIREKT AUF DIE LIVE-WEBSITE HOCHLADEN.
+
+Ausgangspunkt: Von der Nutzerin bereitgestellte Datei „Code aktell.zip“.
+
+Enthaltene Änderungen:
+- Dunkles Winter-Archiv mit zartem Salbeigrün und horizontaler Navigation.
+- Tagesgeschichte über volle Inhaltsbreite, einklappbar; Fortsetzung nach Lösung ebenfalls einklappbar.
+- Reiter „Gesamte Geschichte“ wie ein altes Buch: Nur fertig gelöste Kapitel,
+  darin je „Vor dem Rätsel“ und „Nach der Lösung“ in einem aufklappbaren Kapitel.
+- Beweiswand nutzt volle Inhaltsbreite, Notizen und Verbindungen stehen darunter.
+- Spielleitung erhält die gleiche Farbgestaltung.
+- Bestehender schreibgeschützter Admin-Vorschaumodus erweitert auf alle Navigationsreiter.
+  Er simuliert den Fortschritt nach Kapitelwahl/Vor-/Nach-Lösung, statt persönliche
+  Fortschritts- und Notizdaten des Spielers auszulesen.
+- „Rätsel neu starten“ wird bei gelösten Kapiteln angezeigt. Es startet nur die
+  lokale Aufgabenoberfläche neu. Es löscht oder verändert keine Supabase-Daten,
+  keine Freischaltungen und keine Beweise.
+
+UNVERÄNDERT:
+- raetsel.js und raetsel.css (SHA256-Vergleich mit ursprünglichem ZIP möglich)
+- alle Bilder, sonstige Projektdateien und Datenbankstruktur
+- vorhandene Server-RPCs für Erstlösung und Freischaltung
+
+GEÄNDERT:
+- index.html
+- spielleitung.html
+NEU:
+- winterstern-archiv-ui.css
+
+TESTEN:
+1. Einfachen Design-Klicktest OHNE Konto über
+   Winterstern_Neues_Layout_Interaktive_Vorschau.html (separater Download) durchführen.
+2. Für echte Website-Funktionalität die ZIP auf einer getrennten Testdomain / Preview-
+   Branch mit HTTPS bereitstellen. Spieler- und Spielleitungsansichten durchtesten.
+3. In Supabase nicht automatisch einen neuen Reset-Endpunkt anlegen: Der Restart
+   funktioniert ohne Serveränderung im Browser.
+4. Alle Rätsel 1–19 und die mobile Ansicht, v.a. 12, 14, 15, 16, 18, prüfen.
+5. Kapitel 20 ist in dieser ZIP so enthalten wie im bereitgestellten aktuellen
+   Website-Code. Die separat entwickelte neue Kapitel-20-Rätselversion wurde NICHT
+   ungefragt in die Produktivbasis integriert.
+
+WICHTIGE TESTGRENZEN:
+- JavaScript-Syntax statisch geprüft.
+- Vollständiger Browser-Test war aufgrund gesperrter lokaler Navigation der
+  Arbeitsumgebung nicht möglich.
+- Supabase-Livefunktionen, Authentifizierung, Datenschutzregeln und sämtliche
+  24 Rätsel müssen vor Liveschaltung auf einer echten Testinstanz geprüft werden.
+- Vorschau in der Spielleitung ist eine Simulation der Ansicht, keine Abfrage
+  von tatsächlich vom Spielerkonto gespeicherten Verbindungen oder Notizen.

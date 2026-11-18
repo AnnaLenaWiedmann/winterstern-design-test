@@ -1,0 +1,31 @@
+DER FALL WINTERSTERN – KAPITEL 16
+
+DIE WEBSITE
+Nur vier Dateien aus diesem ZIP ins GitHub-Repository hochladen und die bestehenden ersetzen:
+index.html, spielleitung.html, raetsel.js, raetsel.css.
+Die Datei noras_dunkelkammer_notizen.png aus Kapitel 11 im Repository belassen.
+
+DIE SECHS HISTORISCHEN POLIZEISEITEN
+Im Ordner Historische_Polizeiseiten liegen die fünf Vernehmungsnotizen A bis E
+und ein Prüfvermerk mit acht Logikregeln als einzeln druckbare PNG-Bilder.
+Das PDF Alle_6_Polizeiseiten_A4.pdf enthält dieselben Bilder auf sechs A4-Seiten.
+Diese Drucksachen dem Spieler physisch übergeben; NICHT bei GitHub hochladen.
+
+Die aufwendigen Bilder wurden anhand der letzten Entwürfe übernommen;
+Blatt D wurde ergänzt, damit alle fünf Zeugen komplett sind.
+HINWEIS: Die Bildvorlagen sind KI-generiert. Der Datumsstempel in den
+Bildern zeigt teilweise XI (November), obwohl die Tat am 14.12.1928
+stattfindet. Für den finalen Spieleindruck bitte den Monat handschriftlich
+auf XII korrigieren, oder die PDFs entsprechend überarbeiten lassen.
+
+SPIELLEITUNG
+Kapitel 16 / geheime Antwort: PROTOKOLL
+Päckchensymbol: KERZE
+Beweisstück: B15 – Auswertung der Zeugenaussagen
+Kapitelgeschichte: Kapitel_16_Texte_fuer_Spielleitung.txt
+
+RÄTSELPRÜFUNG
+15 Aussagen, acht Regeln, genau eine korrekte vollständige Zuordnung.
+Die Website bewertet nur nach Klick auf Gesamtes Protokoll prüfen.
+Die HTML-Vorschau ist ohne Datenbank nutzbar, wenn raetsel.js/raetsel.css
+im selben Ordner liegen. Eine Prüfung der Live-Speicherung fand nicht statt.

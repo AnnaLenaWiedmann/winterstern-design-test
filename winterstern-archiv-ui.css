@@ -1,0 +1,120 @@
+/* WINTERSTERN · WINTER-ARCHIV | globale Oberfläche, Puzzle-Mechanik bleibt in raetsel.css */
+:root{--wa-bg:#0b201b;--wa-bg2:#142e27;--wa-panel:#193a30;--wa-panel2:#23473b;--wa-paper:#e8f0e9;--wa-paper2:#dce8df;--wa-paperink:#233b31;--wa-cream:#f4f5ef;--wa-gold:#d3b578;--wa-muted:#bbccc0;--wa-border:rgba(205,185,126,.27)}
+body.ws-newui,body.ws-newadmin{background:radial-gradient(ellipse 70% 30% at 95% -7%,#27503f 0%,transparent 78%),var(--wa-bg);color:var(--wa-cream);font:14px/1.65 Arial,Helvetica,sans-serif;min-height:100vh}
+body.ws-newui header,body.ws-newadmin header{background:linear-gradient(110deg,#102720 10%,#1b3f33 85%);border-bottom:1px solid var(--wa-border);padding:30px clamp(17px,4vw,64px);box-shadow:none}
+body.ws-newui header .brand{gap:22px}
+body.ws-newui header .logo{border-color:var(--wa-gold);color:var(--wa-gold);width:58px;height:58px}
+body.ws-newui header small,body.ws-newadmin header small{color:var(--wa-gold);text-transform:uppercase;font-weight:700;letter-spacing:2.1px}
+body.ws-newui header h1,body.ws-newadmin header h1{font:600 clamp(32px,4.3vw,62px)/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.5px;color:#f8f8f1}
+body.ws-newui main,body.ws-newadmin main{margin:0 auto;padding:24px clamp(13px,3.7vw,60px) 55px;max-width:1750px}
+body.ws-newui .card,body.ws-newadmin .card{background:linear-gradient(165deg,var(--wa-paper),var(--wa-paper2));color:var(--wa-paperink);border:1px solid #aabfb0;border-radius:17px;box-shadow:0 16px 30px #0002;padding:clamp(18px,2.3vw,34px);margin-bottom:20px}
+body.ws-newui .card h1,body.ws-newui .card h2,body.ws-newui .card h3,body.ws-newadmin .card h2,body.ws-newadmin .card h3{color:#244136}
+body.ws-newui .card.hero{background:linear-gradient(118deg,#18392f,#25473a);border:1px solid #496354;color:#edf5ea;box-shadow:0 15px 35px #0003}
+body.ws-newui .card.hero h1,body.ws-newui .card.hero h2{color:#fbfaf5}
+body.ws-newui .card.hero p{color:#c9d6ca}
+body.ws-newui .cap,body.ws-newadmin .cap{color:#8b6741}
+body.ws-newui .hero .cap{color:var(--wa-gold)}
+body.ws-newui .muted,body.ws-newadmin .muted{color:#576f61}
+body.ws-newui .apphead button,body.ws-newui .ws-task-shell > button,body.ws-newui .ws-task-shell > .flex > button,body.ws-newui .ws-preview-navigator button,body.ws-newadmin .card .btn{background:#234c3e;border-color:#234c3e;color:#fbfaf5;border-radius:9px}
+body.ws-newui .apphead button.alt,body.ws-newui .ws-task-shell > button.alt,body.ws-newui .ws-preview-navigator button.alt,body.ws-newadmin .card .btn.alt{background:transparent;border-color:#829d8c;color:#24483c}
+body.ws-newui .apphead button:hover:not(:disabled),body.ws-newui .ws-task-shell > button:hover:not(:disabled),body.ws-newadmin .card .btn:hover:not(:disabled){filter:brightness(1.12)}
+body.ws-newui #login input,body.ws-newui #answer,body.ws-newui #boardNote,body.ws-newui #linkLabel,body.ws-newui #linkFrom,body.ws-newui #linkTo,body.ws-newui #previewChapter,body.ws-newadmin input,body.ws-newadmin textarea,body.ws-newadmin select{background:#f5f8f3;border-color:#a6bfae;color:#223b30;border-radius:8px}
+body.ws-newui input:focus-visible,body.ws-newui button:focus-visible,body.ws-newui summary:focus-visible,body.ws-newadmin button:focus-visible{outline:3px solid #b68d47;outline-offset:3px}
+body.ws-newui .notice,body.ws-newadmin .notice{background:#d4e6d8;border-left:4px solid #557b60;color:#284435}
+body.ws-newui .notice.bad,body.ws-newadmin .notice.err{background:#f2dedb;border-left-color:#9e5355}
+body.ws-newui .apphead{background:#19382e;border:1px solid var(--wa-border);color:#eff4ea;padding:15px 20px;border-radius:12px;margin-bottom:13px;box-shadow:none}
+body.ws-newui .apphead .muted{color:#c5d4c7}
+body.ws-newui .apphead button.alt{color:#eff4ea;border-color:#708a78}
+body.ws-newui .nav{display:flex!important;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:40;padding:10px 12px;margin:0 0 22px;background:#102a23;border:1px solid #41604e;border-radius:13px;box-shadow:0 9px 24px #0004}
+body.ws-newui .nav button{background:transparent;color:#d7e2d8;border:1px solid transparent;border-radius:9px;padding:12px 18px;font-size:13px;letter-spacing:.25px;font-weight:700}
+body.ws-newui .nav button.active{background:#284b3f;color:#f6f8f1;border-color:#a9a071;box-shadow:inset 0 -2px 0 var(--wa-gold)}
+body.ws-newui .nav button:hover{background:#23463a;color:white}
+body.ws-newui .ws-day-content{display:block;width:100%}
+body.ws-newui .ws-day-content>section{width:100%}
+body.ws-newui .ws-chapter-head{padding:clamp(23px,3vw,42px) clamp(24px,4vw,56px)}
+body.ws-newui .ws-chapter-head h1{font-size:clamp(36px,5vw,64px);margin:12px 0;color:#fff}
+body.ws-newui .ws-story-shell{padding:0;overflow:hidden;background:#e8f0e9}
+body.ws-newui .ws-story-fold{padding:0}
+body.ws-newui .ws-story-fold>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px clamp(20px,3vw,45px);border-bottom:1px solid #c3d2c6}
+body.ws-newui .ws-story-fold>summary::-webkit-details-marker{display:none}
+body.ws-newui .ws-story-fold:not([open])>summary{border-bottom:0}
+body.ws-newui .ws-story-fold>summary strong{display:block;font:600 clamp(25px,3vw,36px)/1.1 'Cormorant Garamond',Georgia,serif;color:#244337;margin-top:4px}
+body.ws-newui .ws-fold-label{color:#607a6a;font-size:12px;font-weight:700;white-space:nowrap}
+body.ws-newui .ws-story-fold>summary::after{content:'⌄';font-size:22px;color:#516e5e}
+body.ws-newui .ws-story-fold[open]>summary::after{content:'⌃'}
+body.ws-newui #storypart,body.ws-newui #afterstorypart{padding:25px clamp(20px,4vw,66px) 38px;background:linear-gradient(90deg,#dfeae1,#edf3ec 3%,#eaf2eb 98%,#dfeae1)}
+body.ws-newui #storypart h2,body.ws-newui #afterstorypart h3{font-size:35px}
+body.ws-newui .reader{font:18px/1.86 Georgia,'Times New Roman',serif;max-width:105ch;color:#283e33;white-space:normal}
+body.ws-newui .reader p{margin:0 0 20px;white-space:pre-line}
+body.ws-newui .ws-task-shell{min-height:140px}
+body.ws-newui .ws-bernd-footer{padding:13px 25px;background:#dbe8de}
+body.ws-newui .ws-bernd-footer .bernd{background:none;border:0;padding:0}
+body.ws-newui .ws-bernd-footer .bernd svg{width:63px;height:73px}
+body.ws-newui .ws-bernd-footer .bernd p{margin:0}
+body.ws-newui .ws-book{max-width:1320px;margin:15px auto 45px;padding:15px 25px 25px;background:linear-gradient(100deg,#1d3a30 0%,#375441 3%,#ddded2 3.5%,#e3ede4 5%,#eaf1e9 96%,#c8dacb 100%);border:8px solid #344b36;border-radius:9px 20px 20px 9px;box-shadow:20px 21px 32px #0006, inset 11px 0 14px #0002;color:#244033}
+body.ws-newui .ws-book-inner{padding:clamp(13px,3vw,40px) clamp(12px,4vw,58px)}
+body.ws-newui .ws-book-heading{text-align:center;margin:5px auto 30px;border-bottom:1px double #9aad9d;padding-bottom:20px}
+body.ws-newui .ws-book-heading h2{font:600 clamp(36px,5vw,54px)/1.1 'Cormorant Garamond',Georgia,serif;color:#264236;margin:8px 0}
+body.ws-newui .ws-book-chapter{border-bottom:1px solid #b1c1b3;background:rgba(255,255,255,.13)}
+body.ws-newui .ws-book-chapter summary{list-style:none;display:flex;gap:20px;align-items:center;cursor:pointer;padding:21px 12px}
+body.ws-newui .ws-book-chapter summary::-webkit-details-marker{display:none}
+body.ws-newui .ws-book-chapter[open]{background:#eef3ed}
+body.ws-newui .ws-book-num{font:600 40px Georgia,serif;color:#8c7648;min-width:65px}
+body.ws-newui .ws-book-chapter summary small{display:block;color:#6c8274;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+body.ws-newui .ws-book-chapter summary strong{display:block;font:600 clamp(21px,2.5vw,30px)/1.2 'Cormorant Garamond',Georgia,serif;color:#28463a}
+body.ws-newui .ws-book-toggle{margin-left:auto;font-size:12px;color:#53735d}
+body.ws-newui .ws-book-content{padding:12px clamp(14px,3vw,38px) 26px 90px}
+body.ws-newui .ws-book-scene+.ws-book-scene{border-top:1px solid #b2c6b8;margin-top:25px;padding-top:25px}
+body.ws-newui .ws-book-scene h3{font-size:30px}
+body.ws-newui .ws-book-end{text-align:center;color:#738a79;font:italic 18px Georgia,serif;margin-top:30px}
+body.ws-newui .ws-book-empty{padding:20px 15px 36px;text-align:center}
+body.ws-newui .ws-book-empty h3{font-size:30px}
+body.ws-newui .board-split{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+body.ws-newui .board-split>.card{width:100%;min-width:0}
+body.ws-newui .board{height:clamp(410px,60vh,760px);background:radial-gradient(ellipse,#b3a184,#8e745c);border:10px solid #675441;max-width:100%}
+body.ws-newui .node{background:#f4e5c9;color:#302e27}
+body.ws-newui .board-split aside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:35px}
+body.ws-newui .archiveitem,body.ws-newui .stamp{background:#dce9dd;color:#284136;border-color:#b2c5b8}
+body.ws-newui .storycard{background:#dce9dd;color:#244033}
+body.ws-newui .ws-preview-navigator{background:#dbe7dd!important;border-color:#93af9c!important}
+body.ws-newui .ws-preview-node{cursor:default;touch-action:auto}
+body.ws-newui.ws-admin-preview .nav{display:flex!important}
+body.ws-newui .board-split aside .muted{color:#607463}
+body.ws-newui .ws-material-reminder{background:#d9e8dc;border-left-color:#99844f;color:#294b3b}
+body.ws-newui .ws-next-parcel{background:#dce9dd;border-color:#bda772}
+body.ws-newui .ws-next-parcel strong{color:#284236}
+/* Spielleitung: gleiche Designfarben, formulargerechte Lesbarkeit */
+body.ws-newadmin .card{padding:22px}
+body.ws-newadmin .muted{color:#627a6a}
+body.ws-newadmin .preview,body.ws-newadmin .flag{background:#dbe7dc;color:#2e4539}
+body.ws-newadmin .chapterbtn[aria-current="true"]{background:#d4e2d7;color:#244537}
+body.ws-newadmin .chapterbtn{border-bottom-color:#bfd0c2;color:#254033}
+body.ws-newadmin .tag{background:#d0e0d3;color:#264537}
+body.ws-newadmin #adminPreviewPane{padding:22px}
+body.ws-newadmin #wintersternPreviewFrame{border:1px solid #87a18e!important;background:#102920!important;min-height:780px}
+body.ws-newadmin .btn{background:#244a3c;border-color:#244a3c;color:#fff}
+body.ws-newadmin .btn.alt{color:#244a3c;border-color:#8aa28f;background:transparent}
+body.ws-newadmin .chapters{max-height:730px}
+body.ws-newadmin footer{color:#a9baaf}
+@media(max-width:900px){body.ws-newui .nav{gap:3px;padding:8px}body.ws-newui .nav button{flex:1 1 150px;padding:11px 8px}body.ws-newui .board-split aside{grid-template-columns:1fr}body.ws-newui .ws-book{padding:5px 9px 18px;border-width:5px}body.ws-newui .ws-book-content{padding-left:24px}body.ws-newui .reader{font-size:17px}body.ws-newadmin #wintersternPreviewFrame{min-height:640px}}
+@media(max-width:550px){body.ws-newui main,body.ws-newadmin main{padding:12px 10px 40px}body.ws-newui .nav button{flex:1 1 43%;font-size:12px}body.ws-newui .ws-story-fold>summary{padding:17px}body.ws-newui .ws-fold-label{display:none}body.ws-newui .ws-book-chapter summary{gap:10px}body.ws-newui .ws-book-num{font-size:29px;min-width:41px}body.ws-newui .ws-book-toggle{font-size:10px}body.ws-newui .ws-book-content{padding:10px}body.ws-newui .reader{font-size:16px}body.ws-newui #storypart,body.ws-newui #afterstorypart{padding:20px}body.ws-newui .board{height:480px;border-width:6px}body.ws-newui .card{padding:16px}body.ws-newui .ws-story-shell{padding:0}}
+
+/* WINTERSTERN · Testfassung: großflächiger Titel und Fortschrittsanzeige */
+body.ws-newui header.ws-grand-header{position:relative;isolation:isolate;overflow:hidden;min-height:330px;padding:48px clamp(24px,5vw,100px) 47px;background:radial-gradient(ellipse 70% 110% at 95% 0%,#1e4336 0%,transparent 66%),linear-gradient(110deg,#0b281f,#17372c);border-bottom:1px solid rgba(210,187,124,.28)}
+body.ws-newui .ws-grand-inner{position:relative;z-index:1;max-width:880px}
+body.ws-newui .ws-grand-header small{display:block;color:#d6b879;font:700 12px/1.5 Arial,sans-serif;letter-spacing:3.7px}
+body.ws-newui .ws-grand-header h1{font:400 clamp(48px,6.1vw,102px)/.99 Georgia,serif;letter-spacing:-2.3px;color:#fbfaf3;margin:24px 0 20px}
+body.ws-newui .ws-grand-header h1 em{color:#e1c487;font-style:normal}
+body.ws-newui .ws-grand-header p{color:#c1d2c6;font:17px/1.8 Arial,sans-serif;max-width:700px;margin:0}
+body.ws-newui .ws-grand-line{background:#cdb075;width:78px;height:3px;margin-top:32px}
+body.ws-newui .ws-grand-dial{width:min(52vw,650px);height:min(52vw,650px);border:1px solid rgba(204,184,122,.21);border-radius:50%;position:absolute;right:-3%;top:-335px;box-shadow:0 0 0 36px rgba(203,185,126,.025),0 0 0 88px rgba(203,185,126,.018);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:80px;gap:20px;transform:rotate(-14deg);pointer-events:none}
+body.ws-newui .ws-grand-dial span{font:18px Georgia,serif;letter-spacing:9px;color:rgba(197,168,104,.14)}
+body.ws-newui .ws-progress-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:18px 26px!important;background:#18392f!important;border:1px solid #456354!important;color:#f2f4ec!important}
+body.ws-newui .ws-progress-panel strong{color:#d9bd7f;font:700 11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+body.ws-newui .ws-progress-content{width:min(650px,100%)}
+body.ws-newui .ws-progress-counter{font:500 20px/1.6 Georgia,serif;color:#f5f2e9!important}
+body.ws-newui .ws-progress-track{height:6px;background:#38554a;border-radius:30px;margin-top:10px;overflow:hidden}
+body.ws-newui .ws-progress-track>span{display:block;width:0%;height:100%;background:#d1b16c;transition:width .3s ease}
+body.ws-newui .ws-progress-panel #logout{color:#e0ebdf!important;border-color:#789382!important}
+@media(max-width:850px){body.ws-newui header.ws-grand-header{padding:29px 21px 34px;min-height:0}body.ws-newui .ws-grand-header h1{font-size:clamp(37px,7vw,64px);letter-spacing:-1px}body.ws-newui .ws-grand-header p{font-size:14px;max-width:560px}body.ws-newui .ws-grand-dial{right:-28%;top:-160px;width:450px;height:450px;opacity:.55}body.ws-newui .ws-grand-header small{letter-spacing:1.8px;font-size:10px}}
+@media(max-width:480px){body.ws-newui .ws-grand-header h1{font-size:38px}body.ws-newui .ws-progress-panel{padding:14px!important;align-items:flex-start}body.ws-newui .ws-grand-dial{opacity:.3}body.ws-newui .ws-progress-counter{font-size:17px}}

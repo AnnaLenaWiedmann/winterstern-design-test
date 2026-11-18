@@ -1,0 +1,1 @@
+Kapitel 12: raetsel.js, raetsel.css und nora_platte_39.jpg bis nora_platte_43.jpg ins Hauptverzeichnis hochladen. Spielleitung-Code STERN. Details siehe Kapitel_12_Spielleitung_Loesung_Anleitung.txt.

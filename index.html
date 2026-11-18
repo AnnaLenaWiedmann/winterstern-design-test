@@ -1,0 +1,269 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Winterstern · Die Ermittlungszentrale 0.9</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap');
+:root{--pine:#183c30;--dark:#102b25;--wine:#793844;--paper:#fffaf1;--cream:#eee1cc;--gold:#d6b87c;--ink:#263b30;--line:#d9cab3}*{box-sizing:border-box}body{margin:0;background:#e8dfd0;color:var(--ink);font:14px/1.65 Arial,sans-serif}h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.1}h1{font-size:48px;margin:7px 0}h2{font-size:32px;margin:0 0 12px}h3{font-size:24px;margin:0 0 8px}p{margin:9px 0 15px}header{background:linear-gradient(115deg,#102c23,#255041);color:#f6ecdc;padding:23px clamp(16px,2.5vw,44px);border-bottom:4px solid var(--wine)}header .brand{display:flex;align-items:center;gap:13px}header small{letter-spacing:2px;color:var(--gold)}.logo{width:50px;height:50px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:25px}main{width:100%;max-width:none;margin:24px auto;padding:0 clamp(12px,2.5vw,44px)}.card{background:var(--paper);padding:24px;border-radius:12px;border:1px solid var(--line);margin-bottom:17px;box-shadow:0 6px 20px #182d250a}.hero{background:#1c4034;color:#f3e9d8;border:1px solid #45614e}.hero p{color:#e6d8c2}.muted{color:#65776c}.gold{color:#b48b44}.cap{letter-spacing:1.8px;text-transform:uppercase;font-size:11px;font-weight:700;color:var(--wine)}.hero .cap{color:#dbc28e}button{font:600 14px Arial;cursor:pointer;border:1px solid var(--wine);border-radius:6px;padding:10px 15px;background:var(--wine);color:white}button.alt{background:transparent;color:var(--wine)}button:disabled{opacity:.55;cursor:not-allowed}input,textarea,select{width:100%;font:14px Arial;color:var(--ink);padding:11px;background:white;border:1px solid #bda994;border-radius:6px}textarea{min-height:125px;resize:vertical}label{display:block;font-weight:bold;margin:12px 0 5px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.nav button{background:#f8ecdb;color:var(--pine);border:1px solid #cbbc9e}.nav button.active{background:var(--pine);color:white}.flex{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,310px);gap:18px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:13px}.notice{padding:12px;border-radius:6px;margin:12px 0;background:#e5efe3;border-left:4px solid #44875e;white-space:pre-wrap}.notice.bad{background:#f6e6e1;border-left-color:#a84c4c}.reader{font:17px/1.82 Georgia,serif;max-width:85ch;white-space:pre-line}.reader p{margin-bottom:19px}.divider{border:0;border-top:1px solid var(--line);margin:22px 0}.stamp{background:#f0e5d1;border-radius:7px;padding:13px}.storycard{display:block;width:100%;text-align:left;margin:8px 0;background:#f7eedf;color:var(--ink);border:1px solid #d1bea2}.storycard:hover{background:#f0dfc7}.tag{background:#e9ddc5;padding:4px 9px;border-radius:16px;font-size:12px}.stat{font:700 28px Georgia,serif;color:var(--wine)}.bernd{display:flex;align-items:center;gap:15px;padding:14px;border:1px solid #d7c2a0;background:#f1e7d5;border-radius:10px}.bernd svg{width:102px;height:122px;flex:none;filter:drop-shadow(0 6px 4px #0002)}.small{font-size:12px}.board{height:500px;background:radial-gradient(#b69574,#997352);border:12px solid #76513a;position:relative;overflow:hidden;border-radius:7px;touch-action:none}.board svg.lines{position:absolute;width:100%;height:100%;inset:0;pointer-events:none}.node{position:absolute;cursor:grab;touch-action:none;user-select:none;width:148px;background:#fbefd4;border:1px solid #d2bf96;box-shadow:2px 3px 6px #37271f88;border-radius:4px;padding:13px;min-height:92px}.node:before{content:'';position:absolute;top:5px;left:calc(50% - 5px);width:10px;height:10px;background:#9b4647;border-radius:50%}.node strong{display:block;margin-top:10px}.node-photo{width:100%;height:82px;object-fit:cover;margin-top:12px;border-radius:3px}.archive-photo{max-width:160px;max-height:135px;object-fit:cover;display:block;border-radius:5px;margin:9px 0}.node.selected{outline:3px solid #f7df9f}.node small{display:block;color:#6f6559}.node .link-handle{position:absolute;right:-13px;top:34px;width:26px;height:26px;border-radius:50%;border:2px solid #ffeed1;background:#793844;color:white;font:700 16px Arial,sans-serif;display:grid;place-items:center;cursor:crosshair;touch-action:none;box-shadow:0 1px 6px #0005;padding:0;z-index:3}.node .link-handle:focus-visible{outline:3px solid #e1b96d}.node.link-source{outline:3px solid #fbd18d}.node.link-target{outline:3px dashed #fff1c3}#boardLinkInfo{background:#f6e8d1;padding:9px;border-radius:7px;margin:8px 0;font-size:12px}.board-actions{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}.board-actions button{font-size:12px}.link-row{padding:7px 0;border-bottom:1px solid #e0ceb5;display:flex;gap:9px;align-items:center;justify-content:space-between}.link-row button{font-size:11px;padding:5px 8px}svg#lines .preview{stroke:#f4d79e;stroke-dasharray:4 4;stroke-width:4;opacity:.9}.two{display:grid;grid-template-columns:1fr 1fr;gap:11px}.archiveitem{background:#f1e4d0;padding:15px;border-radius:8px;border:1px solid var(--line);margin:8px 0}.hide{display:none!important}.apphead{margin-bottom:22px}.warning{background:#f4e7d0;padding:10px;border-radius:6px}.hint{background:#f3e8d7;padding:12px;border-left:3px solid var(--gold);margin-top:9px}.board-split{display:grid;grid-template-columns:1fr 260px;gap:15px}@media(max-width:800px){.grid,.cols,.board-split{grid-template-columns:1fr}.board{height:420px;border-width:7px}.node{width:118px}.card{padding:18px}header h1{font-size:38px}}
+.ws-material-reminder{background:#f1e5cc;color:#253d31;border-left:4px solid #ae8746;border-radius:5px;padding:13px 15px;margin:0 0 18px;line-height:1.6}.ws-next-parcel{border:1px solid #c7a46a}.ws-next-parcel strong{color:#22392e}body.ws-admin-preview .ws-preview-navigator{border:2px solid #b49a70;background:#f5ead5}body.ws-admin-preview .ws-preview-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}body.ws-admin-preview .ws-preview-navigator button:disabled{opacity:.45;cursor:not-allowed}body.ws-admin-preview #view{max-width:none}body.ws-admin-preview .nav{display:flex}
+@media(min-width:1500px){.grid{grid-template-columns:minmax(0,1fr) 340px}.card{padding:clamp(24px,2vw,38px)}}
+@media(max-width:650px){header{padding:17px 14px}main{padding:0 12px;margin:14px auto}h1{font-size:34px}.card{padding:16px}.reader{font-size:16px}.ws-preview-navigator .flex{gap:8px}.ws-preview-navigator button{flex:1 1 125px}}
+html,body{max-width:100%;overflow-x:clip}.grid>*,.cols>*,.board-split>*{min-width:0}
+</style><link rel="stylesheet" href="raetsel.css"><link rel="stylesheet" href="winterstern-archiv-ui.css"><script src="raetsel.js"></script></head><body class="ws-newui"><header class="ws-grand-header"><div class="ws-grand-inner"><small>FALKENBRÜCK · WINTER 1928 · EIN FALL IN 24 KAPITELN</small><h1>Die 24 Geheimnisse<br>des <em>Uhrmachers.</em></h1><p>Ein verschwundener Zeitmesser. Eine alte Werkstatt. Und ein kleines Geheimnis hinter jeder verschlossenen Tür.</p><div class="ws-grand-line" aria-hidden="true"></div></div><div class="ws-grand-dial" aria-hidden="true"><span>I&nbsp;&nbsp; II&nbsp;&nbsp; III&nbsp;&nbsp; IV&nbsp;&nbsp; V&nbsp;&nbsp; VI</span><span>VII&nbsp;&nbsp; VIII&nbsp;&nbsp; IX&nbsp;&nbsp; X&nbsp;&nbsp; XI</span><span>XII</span></div></header><main><section class="card" id="login"><h2>Das Archiv betreten</h2><p>Dein persönlicher Ermittlungszugang. Nach der Anmeldung kannst du deinen Spielstand auf mehreren Geräten fortsetzen.</p><form id="loginForm"><label for="email">E-Mail des Spielerkontos</label><input id="email" type="email" required autocomplete="username"><label for="pass">Passwort des Spielerkontos</label><input id="pass" type="password" required autocomplete="current-password"><p><button type="submit" id="signIn">Ermittlungen beginnen</button></p></form><p class="muted small">Die gewünschte Familien-PIN wird später als zusätzliche Zugangsebene eingerichtet. Sie ist kein Ersatz für ein sicheres Passwort.</p></section><div id="status" aria-live="polite"></div><div id="app" class="hide"><div class="card flex apphead ws-progress-panel"><div class="ws-progress-content"><strong id="welcome">Ermittlung läuft</strong><div class="ws-progress-counter" id="progressLabel">0 von 24 Kapiteln gelöst</div><div class="ws-progress-track" role="progressbar" aria-label="Ermittlungsfortschritt" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div></div><button class="alt" id="logout">Abmelden</button></div><nav class="nav" id="nav" aria-label="Bereiche des Fallarchivs"><button data-tab="daily" class="active">Tagesrätsel</button><button data-tab="story">Gesamte Geschichte</button><button data-tab="board">Beweiswand</button><button data-tab="archive">Archiv</button></nav><div id="view"></div></div></main>
+<script>
+'use strict';
+const BASE='https://giswhdctilbwtgvuxkaj.supabase.co';
+const PUB='sb_publishable_4tWOnWo7JqIf9sAXbocBdQ_MdJ93zDN';
+const ADMIN_PREVIEW=new URLSearchParams(location.search).get('spielvorschau')==='1';
+let previewSolved=false, replayChapter=null, previewAllDiscoveries=[];
+let session=null,me=null,progress=[],chapters=[],discoveries=[],boardItems=[],connections=[],mediaCache=new Map(),active='daily',current=1,selected=null,saveTimer=null,linkSource=null,linkDrag=null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const stamp=(t)=>t?new Date(t).toLocaleDateString('de-DE'):'';
+function notice(msg,bad=false){const n=document.createElement('div');n.className='notice'+(bad?' bad':'');n.textContent=msg;$('status').replaceChildren(n)}
+async function api(path,opt={}){const h={'apikey':PUB,'Accept':'application/json',...(session?{'Authorization':'Bearer '+session.access_token}:{}),...(opt.headers||{})};const r=await fetch(BASE+path,{...opt,headers:h});let txt=await r.text(),d;try{d=txt?JSON.parse(txt):null}catch{d=txt}if(!r.ok)throw Error(d?.message||d?.msg||d?.error_description||d?.error||'HTTP '+r.status);return d}
+function body(m,data,headers={}){return {method:m,headers:{'Content-Type':'application/json','Prefer':'return=representation',...headers},body:JSON.stringify(data)}}
+async function rpc(name,data){return api('/rest/v1/rpc/'+name,body('POST',data))}
+async function safeAction(btn,fn){if(btn?.disabled)return;if(btn)btn.disabled=true;try{await fn()}catch(e){notice(e.message,true)}finally{if(btn)btn.disabled=false}}
+const pg=n=>progress.find(p=>p.chapter_id===n)||(ADMIN_PREVIEW?{started_at:n===current,solved_at:null}:{});
+const chapter=n=>chapters.find(c=>c.id===n);
+const done=n=>!!pg(n).solved_at;
+const started=n=>!!pg(n).started_at;
+function paragraph(text){return String(text||'').split(/\n\s*\n/g).filter(Boolean).map(p=>'<p>'+esc(p)+'</p>').join('')}
+function bernd(txt){return `<div class="bernd"><svg viewBox="0 0 120 130" role="img" aria-label="Bernd mit riesiger Mütze und weißem Bart"><path d="M30 60 Q12 28 55 5 Q90 -7 103 42 Q108 56 87 65" fill="#7e8a77" stroke="#596b5e" stroke-width="2"/><path d="M14 57 Q50 70 106 56 L103 70 Q60 81 21 73 Z" fill="#d9d6c9"/><path d="M37 74 Q23 105 58 126 Q96 115 85 75 Z" fill="#f3f0e4"/><ellipse cx="62" cy="76" rx="15" ry="13" fill="#e7c6a7"/><path d="M42 80 Q30 100 44 112 M73 82 Q82 95 77 113" stroke="#fff" stroke-width="8" fill="none"/><path d="M26 105 Q12 122 33 127 H86 Q108 124 98 107" fill="#829080"/></svg><p>${esc(txt)}</p></div>`}
+async function auth(){const res=await api('/auth/v1/token?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('email').value.trim(),password:$('pass').value})});if(!res.access_token||!res.user)throw Error('Anmeldung fehlgeschlagen.');session={...res,user:res.user};$('pass').value='';await init();}
+async function refreshSession(){
+  if(ADMIN_PREVIEW){
+    if(!session?.access_token)throw Error('Die Anmeldung der Spielleitung ist nicht mehr verfügbar.');
+    return;
+  }
+  if(!session)return;
+  if(session.expires_at&&Date.now()/1000<session.expires_at-100)return;
+  const r=await api('/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({refresh_token:session.refresh_token})});
+  session={...r,user:r.user||session.user,expires_at:Date.now()/1000+(r.expires_in||3600)};
+  sessionStorage.setItem('ws_session',JSON.stringify(session));
+}
+function receivePreviewSession(){
+ return new Promise((resolve,reject)=>{
+   if(window.parent===window){reject(Error('Bitte öffne die Vorschau über die Spielleitung.'));return;}
+   let finished=false;
+   const timer=setTimeout(()=>{if(finished)return;finished=true;window.removeEventListener('message',onMessage);reject(Error('Die Anmeldung konnte nicht an die Vorschau übergeben werden. Klicke in der Spielleitung auf „Vorschau neu laden“.'));},10000);
+   function onMessage(event){
+     if(event.source!==window.parent||event.origin!==location.origin)return;
+     const message=event.data;
+     if(message?.type!=='winterstern-preview-session'||!message.session?.access_token||!message.session?.user?.id)return;
+     if(finished)return;
+     finished=true;clearTimeout(timer);window.removeEventListener('message',onMessage);
+     resolve({access_token:message.session.access_token,user:message.session.user});
+   }
+   window.addEventListener('message',onMessage);
+   // The parent retains the session. No credentials are stored or inserted in the URL.
+   window.parent.postMessage({type:'winterstern-preview-request'},location.origin);
+ });
+}
+async function init(){if(ADMIN_PREVIEW){await initAdminPreview();return;}await refreshSession();const members=await api('/rest/v1/winterstern_members?select=role,display_name&user_id=eq.'+encodeURIComponent(session.user.id));if(!members?.length||members[0].role!=='player')throw Error('Dieser Zugang ist nicht als Spieler eingerichtet.');me=members[0];$('login').classList.add('hide');$('app').classList.remove('hide');session.expires_at=session.expires_at||Date.now()/1000+(session.expires_in||3600);sessionStorage.setItem('ws_session',JSON.stringify(session));const ok=await rpc('winterstern_start_chapter',{p_chapter:1});if(!ok&&!(await getProgress()).find(p=>p.chapter_id===1))throw Error('Kapitel 1 ist noch nicht veröffentlicht.');await loadAll();render();notice('Verbindung zum Fallarchiv hergestellt. Deine Ermittlungen werden in Supabase gespeichert.');}
+async function initAdminPreview(){
+  await refreshSession();
+  const members=await api('/rest/v1/winterstern_members?select=role,display_name&user_id=eq.'+encodeURIComponent(session.user.id));
+  if(!members?.length||members[0].role!=='admin')throw Error('Vorschau nur für die authentifizierte Spielleitung.');
+  me=members[0];
+  chapters=await api('/rest/v1/winterstern_chapters?select=id,title,puzzle_type,symbol,published&order=id.asc');
+  previewAllDiscoveries=await api('/rest/v1/winterstern_discoveries?select=id,chapter_id,unlock_stage,kind,label,description,evidence_number,show_on_board,image_path,document_path&order=id.asc');
+  current=Math.min(24,Math.max(1,Number(new URLSearchParams(location.search).get('kapitel'))||1));
+  simulatePreviewState();
+  $('login').classList.add('hide');$('app').classList.remove('hide');
+  document.body.classList.add('ws-admin-preview');
+  $('welcome').textContent='Spielleitung · vollständige Spielervorschau';
+  $('progressLabel').textContent='Simulation – keine Speicherung und kein echter Spielstand';
+  $('logout').style.display='none';
+  active='daily';render();await fillDaily();
+}
+function simulatePreviewState(){
+  progress=chapters.filter(c=>c.id<current||(c.id===current)).map(c=>({chapter_id:c.id,started_at:true,solved_at:c.id<current||(c.id===current&&previewSolved)?true:null}));
+  discoveries=previewAllDiscoveries.filter(d=>d.chapter_id<current||(d.chapter_id===current&&(previewSolved||!(/solv|gelöst|after/i.test(d.unlock_stage||'')))));
+  boardItems=[];connections=[];
+}
+async function previewSubmit(answer){
+  await refreshSession();
+  const record=await rpc('winterstern_admin_get_answer',{p_chapter:current});
+  const normalize=x=>String(x??'').trim().toLocaleUpperCase('de-DE').replace(/\s+/g,' ');
+  const valid=record?.saved&&[record.answer,...(record.alternatives||[])].some(x=>normalize(x)===normalize(answer));
+  if(valid){previewSolved=true;simulatePreviewState();render();await fillDaily();}
+  return !!valid;
+}
+async function previewChangeChapter(n){
+  current=Math.max(1,Math.min(24,n));previewSolved=false;replayChapter=null;simulatePreviewState();
+  history.replaceState(null,'','?spielvorschau=1&kapitel='+current);
+  render();await fillDaily();
+}
+async function getProgress(){progress=await api('/rest/v1/winterstern_progress?select=chapter_id,started_at,solved_at,evidence_confirmed_at&order=chapter_id.asc');return progress}
+async function loadAll(){await refreshSession();await getProgress();chapters=await api('/rest/v1/winterstern_chapters?select=id,title,puzzle_type,symbol,published&order=id.asc');discoveries=await api('/rest/v1/winterstern_discoveries?select=id,chapter_id,unlock_stage,kind,label,description,evidence_number,show_on_board,image_path,document_path&order=id.asc');boardItems=await api('/rest/v1/winterstern_board_items?select=user_id,discovery_id,pos_x,pos_y,note');connections=await api('/rest/v1/winterstern_board_connections?select=id,from_discovery_id,to_discovery_id,label');const allowed=new Set(discoveries.map(d=>d.id));boardItems=boardItems.filter(x=>allowed.has(x.discovery_id));connections=connections.filter(x=>allowed.has(x.from_discovery_id)&&allowed.has(x.to_discovery_id));const mediaPaths=new Set(discoveries.flatMap(d=>[d.image_path,d.document_path]).filter(Boolean));for(const [path,url] of mediaCache){if(!mediaPaths.has(path)){URL.revokeObjectURL(url);mediaCache.delete(path)}}if(!started(current))current=Math.max(1,...progress.filter(x=>x.started_at).map(x=>x.chapter_id));$('welcome').textContent='Ermittler · '+me.display_name;$('progressLabel').textContent=progress.filter(x=>x.solved_at).length+' von 24 Kapiteln gelöst';}
+function tabs(){document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===active))}
+function render(){const bar=$('progressBar'),fill=$('progressFill');if(bar&&fill){const n=ADMIN_PREVIEW?(previewSolved?Math.max(1,current):Math.max(0,current-1)):progress.filter(x=>x.solved_at).length;bar.setAttribute('aria-valuenow',String(n));fill.style.width=(100*n/24)+'%';}tabs();$('view').innerHTML=active==='daily'?dailyView():active==='story'?storyView():active==='archive'?archiveView():boardView();if(active==='board')drawBoard();if(active==='story')wireStoryAccordions()}
+function dayButtons(){if(ADMIN_PREVIEW)return `<div class="card ws-preview-navigator"><div class="ws-preview-head"><span class="cap">SPIELLEITUNG · VORSCHAU OHNE SPIELSTAND</span><strong>Kapitel ${String(current).padStart(2,'0')} / 24</strong></div><div class="flex" style="margin:12px 0"><button class="alt" id="previewPrev" ${current===1?'disabled':''}>← Vorheriges Kapitel</button><label style="display:flex;gap:8px;align-items:center">Kapitel <select id="previewChapter" style="width:auto">${chapters.map(c=>`<option value="${c.id}" ${c.id===current?'selected':''}>${String(c.id).padStart(2,'0')} · ${esc(c.title)}</option>`).join('')}</select></label><button id="previewNext" ${current===24?'disabled':''}>Nächstes Kapitel →</button></div><div class="flex"><button class="${!previewSolved?'':'alt'}" id="previewBefore">Vor der Lösung</button><button class="${previewSolved?'':'alt'}" id="previewAfter">Nach der Lösung</button><span class="muted small">Auch unveröffentlichte Kapitel sichtbar · keine Datenänderung</span></div></div>`;return `<div class="card"><h3>Ermittlungstage</h3><div class="flex">${progress.filter(x=>x.started_at).map(x=>`<button class="${x.chapter_id===current?'':'alt'}" data-chapter="${x.chapter_id}">${String(x.chapter_id).padStart(2,'0')}</button>`).join('')}</div></div>`}
+function dailyView(){
+  const c=chapter(current);
+  if(!c||!started(current))return `<section class="card"><h2>Dieses Kapitel ist noch gesperrt</h2><p>Es wird erst nach der Veröffentlichung durch die Spielleitung und deiner Freigabe angezeigt.</p></section>`;
+  return `<div class="ws-day-content">${dayButtons()}
+    <section class="card hero ws-chapter-head"><span class="cap">Kapitel ${String(current).padStart(2,'0')} · Der Fall Winterstern</span><h1>${esc(c.title)}</h1><p>Falkenbrück · Die 24 Geheimnisse des Uhrmachers</p></section>
+    <section class="card ws-story-shell"><details class="ws-story-fold" open><summary><span><span class="cap">KAPITEL ${String(current).padStart(2,'0')}</span><strong>Die Geschichte vor dem Rätsel</strong></span><span class="ws-fold-label">Ein- / ausklappen</span></summary><div id="storypart"><p>Geschichte wird geladen.</p></div></details></section>
+    <section class="card ws-task-shell" id="taskpart"></section>
+    <section class="card ws-story-shell" id="afterstorycard" hidden><details class="ws-story-fold" open><summary><span><span class="cap">NACH DER LÖSUNG</span><strong>Wie die Geschichte weitergeht</strong></span><span class="ws-fold-label">Ein- / ausklappen</span></summary><div id="afterstorypart"></div></details></section>
+    <section class="card ws-bernd-footer">${bernd('Die Werkstatt ist aufgeräumt. Zumindest aus meiner Sicht. Bernd.')}</section>
+  </div>`;
+}
+async function fillDaily(){
+  if(active!=='daily'||!started(current)||!$('storypart')||!$('taskpart'))return;
+  const s=await api('/rest/v1/winterstern_scenes?select=stage,title,body,display_order&chapter_id=eq.'+current+'&order=display_order.asc');
+  const pu=await api('/rest/v1/winterstern_puzzles?select=instructions,hint_1,hint_2,hint_3,answer_format&chapter_id=eq.'+current);
+  if(active!=='daily'||!$('storypart')||!$('taskpart'))return;
+  const first=s.filter(x=>x.stage==='started'),after=s.filter(x=>x.stage==='solved');
+  const preface=current===2?'<div class="ws-material-reminder"><strong>Für Kapitel 2:</strong> Du benötigst keine Druckvorlage und keine echten Streichhölzer. Die drei Prüfungen werden direkt am digitalen Werkstatttisch durchgeführt. Den historischen Tagebucheintrag hast du bereits vor Beginn der Reise erhalten.</div>':current>2?'<div class="ws-material-reminder"><strong>Unterlagen vom Vortag:</strong> Falls die neue Aufgabe auf ein Päckchen oder Dokument verweist, verwende jetzt das Material, das du nach dem vorherigen Kapitel erhalten hast.</div>':'';
+  $('storypart').innerHTML=preface+(first.map(x=>`<div><h2>${esc(x.title)}</h2><div class="reader">${paragraph(x.body)}</div></div>`).join('')||'<p>Für dieses Kapitel ist noch keine Szene eingetragen.</p>');
+  const puzzle=pu[0];
+  let task=`<h2>Ermittlungsauftrag</h2><p>${esc(puzzle?.instructions||'Die Aufgabe wird noch vorbereitet.')}</p>`;
+  if(!done(current)||replayChapter===current){
+    if(current>=1&&current<=23){task+='<div id="specialPuzzle"></div>'}
+    else{task+=`<label for="answer">Deine Lösung</label><div class="flex"><input style="flex:1;min-width:160px" id="answer" autocomplete="off" placeholder="Lösungswort oder Code"><button id="check">Prüfen</button></div><div id="answerfeedback" aria-live="polite"></div>`}
+    // Bei interaktiven Rätseln werden die abgestuften Hinweise unmittelbar im Rätselmodul angezeigt.
+    if(current===24)[puzzle?.hint_1,puzzle?.hint_2,puzzle?.hint_3].filter(Boolean).forEach((hint,i)=>{task+=`<details class="hint"><summary>Hinweis ${i+1} anzeigen</summary><p>${esc(hint)}</p></details>`});
+  }else{
+    task+=`<div class="notice">Rätsel gelöst. Alle Freischaltungen bleiben gespeichert.</div>`;
+    if(current<24){
+      const symbol=esc(chapter(current)?.symbol||'Siehe Unterlagen');
+      task+=`<div class="stamp ws-next-parcel"><strong>Päckchensymbol: ${symbol}</strong><p>Suche das Päckchen mit diesem Zeichen und lege es für den nächsten Ermittlungstag bereit. <strong>Bitte erst morgen öffnen.</strong> Im folgenden Kapitel erfährst du, wann und wofür du den Inhalt benötigst.</p></div><hr class="divider"><button id="next">Nächstes Kapitel öffnen</button><div id="nextfeedback" aria-live="polite" class="small" style="margin-top:10px"></div>`;
+    }else{task+='<div class="stamp"><strong>Fall abgeschlossen.</strong> Alle 24 Ermittlungsaufgaben sind gelöst.</div>'}
+  }
+  if(done(current)){
+    task+=`<hr class="divider"><button type="button" class="alt ws-replay-btn" id="replayPuzzle">${replayChapter===current?'Wiederholung beenden':'Rätsel neu starten'}</button><p class="small muted">Nur das Rätsel wird neu gestartet. Dein Fortschritt, die Geschichte, Beweise und freigeschalteten Kapitel bleiben erhalten.</p>`;
+  }
+  $('taskpart').innerHTML=task;
+  const afterCard=$('afterstorycard');
+  if(afterCard){afterCard.hidden=!done(current);if(done(current))$('afterstorypart').innerHTML=after.map(x=>`<h3>${esc(x.title)}</h3><div class="reader">${paragraph(x.body)}</div>`).join('')||'<p>Die Fortsetzung ist noch nicht hinterlegt.</p>'}
+  const replay=$('replayPuzzle');if(replay)replay.onclick=()=>{replayChapter=replayChapter===current?null:current;render();fillDaily().catch(e=>notice(e.message,true))};
+  if((!done(current)||replayChapter===current)&&(current>=1&&current<=23)){
+    mountWintersternPuzzle(current,$('specialPuzzle'),async answer=>{
+      if(ADMIN_PREVIEW)return previewSubmit(answer);
+      if(done(current)){replayChapter=null;render();await fillDaily();notice('Rätsel erneut gelöst. Dein bisheriger Fortschritt bleibt bestehen.');return true;}
+      await refreshSession();
+      const result=await rpc('winterstern_submit_answer',{p_chapter:current,p_answer:answer});
+      if(result){await loadAll();render();await fillDaily()}
+      return result;
+    });
+  }
+  const check=$('check');
+  if(check)check.onclick=()=>safeAction(check,async()=>{
+    if(!ADMIN_PREVIEW&&done(current)){replayChapter=null;render();await fillDaily();notice('Wiederholung abgeschlossen. Alle Freischaltungen bleiben bestehen.');return;}
+    if(ADMIN_PREVIEW){const valid=await previewSubmit($('answer').value.trim());if(!valid){const el=$('answerfeedback');if(el)el.innerHTML='<div class="notice bad">Diese Antwort stimmt noch nicht. Es wird nichts gespeichert.</div>'}return}
+    await refreshSession();const result=await rpc('winterstern_submit_answer',{p_chapter:current,p_answer:$('answer').value.trim()});
+    if(result){await loadAll();render();await fillDaily()}
+    else $('answerfeedback').innerHTML='<div class="notice bad">Dieser Code passt noch nicht. Prüfe deine Unterlagen oder öffne einen Hinweis.</div>';
+  });
+  const next=$('next');
+  if(next)next.onclick=()=>safeAction(next,async()=>{
+    if(ADMIN_PREVIEW){await previewChangeChapter(current+1);return}
+    await refreshSession();const target=current+1;const ok=await rpc('winterstern_start_chapter',{p_chapter:target});
+    if(!ok){const feedback=$('nextfeedback');if(feedback){feedback.className='notice bad small';feedback.textContent='Kapitel '+String(target).padStart(2,'0')+' ist noch nicht von der Spielleitung veröffentlicht. Deine bisherige Lösung bleibt gespeichert. Sobald das Kapitel freigegeben ist, kannst du hier weitermachen.'}return}
+    current++;await loadAll();render();await fillDaily();
+  });
+}
+function storyView(){
+ const completed=progress.filter(p=>p.solved_at).sort((a,b)=>a.chapter_id-b.chapter_id);
+ return `<section class="card hero ws-chapter-head"><span class="cap">FALKENBRÜCK · DEIN ROMAN</span><h1>Gesamte Geschichte</h1><p>Alle abgeschlossenen Kapitel an einem Ort. Öffne die Seiten eines Kapitels, wann immer du sie erneut lesen möchtest.</p></section>
+ <div class="ws-book"><div class="ws-book-inner"><div class="ws-book-heading"><span class="cap">DIE 24 GEHEIMNISSE DES UHRMACHERS</span><h2>Das Buch der Ermittlung</h2></div>
+ ${completed.length?completed.map(p=>`<details class="ws-book-chapter" data-story-chapter="${p.chapter_id}"><summary><span class="ws-book-num">${String(p.chapter_id).padStart(2,'0')}</span><span><small>Kapitel ${p.chapter_id}</small><strong>${esc(chapter(p.chapter_id)?.title||'')}</strong></span><span class="ws-book-toggle">Aufklappen</span></summary><div class="ws-book-content" data-story-content="${p.chapter_id}"><p>Kapitel wird geladen …</p></div></details>`).join(''):'<div class="ws-book-empty"><h3>Die ersten Seiten sind noch leer</h3><p>Sobald du das Rätsel von Kapitel 1 gelöst hast, erscheint hier dessen Geschichte vor und nach der Aufgabe. Neue Kapitel kommen immer erst nach ihrer Lösung hinzu.</p></div>'}
+ <p class="ws-book-end">Fortsetzung folgt …</p></div></div>`;
+}
+function wireStoryAccordions(){
+ document.querySelectorAll('[data-story-chapter]').forEach(el=>el.addEventListener('toggle',()=>{
+  if(el.open)readStory(Number(el.dataset.storyChapter)).catch(e=>notice(e.message,true));
+ }));
+}
+async function readStory(n){
+ if(!done(n))return;
+ const box=document.querySelector('[data-story-content="'+n+'"]');if(!box||box.dataset.loaded==='1')return;
+ await refreshSession();
+ const s=await api('/rest/v1/winterstern_scenes?select=stage,title,body,display_order&chapter_id=eq.'+n+'&order=display_order.asc');
+ if(!box.isConnected)return;
+ const sections=[{stage:'started',label:'Vor dem Rätsel'},{stage:'solved',label:'Nach der Lösung'}];
+ box.innerHTML=sections.map(sec=>`<div class="ws-book-scene"><span class="cap">${sec.label}</span>${s.filter(x=>x.stage===sec.stage).map(x=>`<h3>${esc(x.title)}</h3><div class="reader">${paragraph(x.body)}</div>`).join('')||'<p>Für diesen Abschnitt ist noch kein Text hinterlegt.</p>'}</div>`).join('');
+ box.dataset.loaded='1';
+}
+function archiveView(){return `<section class="card hero"><h1>Das Archiv</h1><p>Hier liegen die digitalen Beweise, die deine Arbeit wirklich freigeschaltet hat.</p></section><section class="card">${discoveries.map(d=>`<div class="archiveitem"><span class="cap">${esc(d.kind)} · ${esc(d.evidence_number||'Aktenfund')}</span><h3>${esc(d.label)}</h3><p>${esc(d.description)}</p>${d.image_path?`<img class="archive-photo" data-media-image="${esc(d.id)}" alt="Bild zu ${esc(d.label)}">`:''}${d.document_path?`<button class="alt" data-media-doc="${esc(d.id)}">PDF-Beweisstück ansehen</button>`:''}</div>`).join('')||'<p>Noch keine digitalen Dokumente freigeschaltet.</p>'}</section>`}
+async function mediaBlob(path){if(mediaCache.has(path))return mediaCache.get(path);await refreshSession();const r=await fetch(BASE+'/storage/v1/object/authenticated/winterstern-media/'+path.split('/').map(encodeURIComponent).join('/'),{headers:{apikey:PUB,Authorization:'Bearer '+session.access_token}});if(!r.ok)throw Error('Datei nicht freigegeben oder nicht abrufbar (HTTP '+r.status+').');const url=URL.createObjectURL(await r.blob());mediaCache.set(path,url);return url;}
+async function paintArchiveImages(){for(const img of document.querySelectorAll('[data-media-image]')){let d=discoveries.find(x=>x.id===Number(img.dataset.mediaImage));if(d?.image_path)mediaBlob(d.image_path).then(url=>{if(img.isConnected)img.src=url}).catch(()=>{if(img.isConnected)img.alt='Bild noch nicht verfügbar.'})}}
+async function openEvidencePdf(id){const d=discoveries.find(x=>x.id===id);if(!d?.document_path)return;const popup=window.open('','_blank');try{const url=await mediaBlob(d.document_path);if(popup)popup.location.href=url;else{const a=document.createElement('a');a.href=url;a.target='_blank';a.click()}}catch(e){if(popup)popup.close();notice(e.message,true)}}
+function boardView(){return `<section class="card hero"><h1>Die Beweiswand</h1><p>Ordne deine Spuren, verbinde die Karten und halte eigene Vermutungen fest. Die Karten erscheinen erst, wenn du sie tatsächlich entdeckt hast.</p></section><div class="board-split"><div class="card"><div id="board" class="board"><svg id="lines" class="lines"></svg></div><div id="boardLinkInfo" role="status">Ziehe den roten Verbindungspunkt einer Karte zu einer zweiten Karte. Alternativ: Punkt antippen und danach die Zielkarte antippen.</div><div class="board-actions"><button id="cancelLink" class="alt" type="button">Verbindung abbrechen</button><button id="resetBoard" class="alt" type="button">Karten anordnen</button></div><p class="small muted">Karte ziehen = verschieben · Karte anklicken = Notizen · Roter Punkt = Verbindung ziehen.</p></div><aside class="card"><h3>Ermittlungsnotizen</h3><div id="boardDetails">Wähle eine Karte auf der Beweiswand.</div><hr class="divider"><h3>Verbindungen</h3><p class="small muted">Per rotem Griff direkt verbinden oder hier zwei Karten auswählen.</p><label for="linkFrom">Von</label><select id="linkFrom"></select><label for="linkTo">Zu</label><select id="linkTo"></select><label for="linkLabel">Vermerk (optional)</label><input id="linkLabel" placeholder="z. B. hat Zugang"><p><button id="makeLink">Karten verbinden</button></p><div id="linkList" aria-live="polite"></div></aside></div>`}
+function pos(d,i){let v=boardItems.find(x=>x.discovery_id===d.id);return {x:Number(v?.pos_x??(35+(i%3)*165)),y:Number(v?.pos_y??(35+Math.floor(i/3)*120))}}
+function linkMessage(t){const el=$('boardLinkInfo');if(el)el.textContent=t}
+function clearLink(){linkSource=null;linkDrag=null;document.querySelectorAll('.node').forEach(n=>n.classList.remove('link-source','link-target'));drawLines();linkMessage('Ziehe den roten Verbindungspunkt einer Karte zu einer zweiten Karte. Alternativ: Punkt antippen und danach die Zielkarte antippen.')}
+async function persistLink(a,b,label=''){
+ if(a===b)throw Error('Bitte zwei verschiedene Karten verbinden.');
+ if(!discoveries.some(d=>d.id===a&&d.show_on_board)||!discoveries.some(d=>d.id===b&&d.show_on_board))throw Error('Diese Karte ist noch nicht freigeschaltet.');
+ if(connections.some(c=>(c.from_discovery_id===a&&c.to_discovery_id===b)||(c.from_discovery_id===b&&c.to_discovery_id===a)))throw Error('Die Karten sind bereits miteinander verbunden.');
+ await refreshSession();
+ let added=await api('/rest/v1/winterstern_board_connections',body('POST',{user_id:session.user.id,from_discovery_id:a,to_discovery_id:b,label}));
+ if(!added?.length)throw Error('Verbindung konnte nicht gespeichert werden.');
+ connections.push(added[0]);drawLines();drawLinkList();notice('Verbindung in Supabase gespeichert.');
+}
+function drawLinkList(){const el=$('linkList');if(!el)return;const visible=new Set(discoveries.filter(d=>d.show_on_board).map(d=>d.id));const list=connections.filter(c=>visible.has(c.from_discovery_id)&&visible.has(c.to_discovery_id));el.innerHTML='<h4>Gespeicherte Verbindungen ('+list.length+')</h4>'+ (list.map(c=>`<div class="link-row"><span>${esc(discoveries.find(d=>d.id===c.from_discovery_id)?.label||'')} ↔ ${esc(discoveries.find(d=>d.id===c.to_discovery_id)?.label||'')}${c.label?' · '+esc(c.label):''}</span><button type="button" class="alt" data-unlink="${c.id}" aria-label="Verbindung entfernen">Entfernen</button></div>`).join('')||'<p class="small muted">Noch keine Verbindung.</p>');
+ el.querySelectorAll('[data-unlink]').forEach(btn=>btn.onclick=()=>safeAction(btn,async()=>{await refreshSession();await api('/rest/v1/winterstern_board_connections?id=eq.'+btn.dataset.unlink,{method:'DELETE'});connections=connections.filter(c=>String(c.id)!==btn.dataset.unlink);drawLines();drawLinkList();notice('Verbindung entfernt.')}));
+}
+function drawBoard(){if(ADMIN_PREVIEW){drawPreviewBoard();return;}const items=discoveries.filter(x=>x.show_on_board),b=$('board');const details=$('boardDetails');if(!b)return;selected=items.some(d=>d.id===selected)?selected:null;linkSource=null;linkDrag=null;if(!items.length){const p=document.createElement('p');p.textContent='Noch keine Spuren entdeckt.';p.style.padding='24px';b.append(p);return}
+ for(let i=0;i<items.length;i++){
+  let d=items[i],v=pos(d,i),node=document.createElement('div');node.className='node'+(selected===d.id?' selected':'');node.dataset.id=d.id;node.style.left=Math.max(0,Math.min(v.x,Math.max(0,b.clientWidth-155)))+'px';node.style.top=Math.max(0,Math.min(v.y,Math.max(0,b.clientHeight-105)))+'px';node.innerHTML='<strong>'+esc(d.label)+'</strong><small>'+esc(d.kind)+'</small><button type="button" class="link-handle" title="Verbindung ziehen oder antippen" aria-label="Verbindung von '+esc(d.label)+' ziehen">+</button>';b.append(node);
+  if(d.image_path){const img=document.createElement('img');img.className='node-photo';img.alt='Bild zu '+d.label;node.insertBefore(img,node.querySelector('strong'));mediaBlob(d.image_path).then(url=>{if(img.isConnected)img.src=url}).catch(()=>{});}
+  const handle=node.querySelector('.link-handle');
+  handle.addEventListener('pointerdown',e=>{
+    e.preventDefault();e.stopPropagation();if(linkSource&&linkSource!==d.id){const a=linkSource;clearLink();persistLink(a,d.id).catch(err=>notice(err.message,true));return}
+    linkSource=d.id;linkDrag={x:e.clientX,y:e.clientY,moved:false};node.classList.add('link-source');handle.setPointerCapture(e.pointerId);linkMessage('Ziehe die Verbindung zu einer anderen Karte oder tippe diese an.');drawLines();
+  });
+  handle.addEventListener('pointermove',e=>{if(!linkDrag||linkSource!==d.id)return;const dx=e.clientX-linkDrag.x,dy=e.clientY-linkDrag.y;if(Math.abs(dx)+Math.abs(dy)>7)linkDrag.moved=true;linkDrag.x=e.clientX;linkDrag.y=e.clientY;drawLines();const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('.node');document.querySelectorAll('.node').forEach(n=>n.classList.toggle('link-target',!!target&&n===target&&Number(n.dataset.id)!==d.id))});
+  handle.addEventListener('pointerup',e=>{if(!linkDrag||linkSource!==d.id)return;const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('.node');const to=target?Number(target.dataset.id):null;linkDrag=null;if(to&&to!==d.id){const from=d.id;clearLink();persistLink(from,to).catch(err=>notice(err.message,true))}else{linkMessage('Jetzt eine zweite Karte antippen oder einen neuen Verbindungsgriff ziehen.');drawLines()}});
+  handle.addEventListener('pointercancel',()=>{linkDrag=null;drawLines()});
+  let start=null;node.addEventListener('pointerdown',e=>{if(e.target.closest('.link-handle'))return;if(linkSource){e.preventDefault();return}start={x:e.clientX,y:e.clientY,baseX:node.offsetLeft,baseY:node.offsetTop,moved:false};node.setPointerCapture(e.pointerId)});
+  node.addEventListener('pointermove',e=>{if(!start)return;let dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)+Math.abs(dy)>4)start.moved=true;node.style.left=Math.max(0,Math.min(b.clientWidth-node.offsetWidth,start.baseX+dx))+'px';node.style.top=Math.max(0,Math.min(b.clientHeight-node.offsetHeight,start.baseY+dy))+'px';drawLines()});
+  node.addEventListener('pointerup',e=>{if(e.target.closest('.link-handle'))return;if(linkSource){const from=linkSource;clearLink();persistLink(from,d.id).catch(err=>notice(err.message,true));return}if(!start)return;let moved=start.moved;start=null;if(moved)savePosition(d.id,node.offsetLeft,node.offsetTop);else{selected=d.id;selectBoard(d.id)}});
+  node.addEventListener('pointercancel',()=>{start=null});
+ }
+ const opts=items.map(d=>'<option value="'+d.id+'">'+esc(d.label)+'</option>').join('');$('linkFrom').innerHTML=opts;$('linkTo').innerHTML=opts;
+ $('makeLink').onclick=()=>safeAction($('makeLink'),async()=>persistLink(Number($('linkFrom').value),Number($('linkTo').value),$('linkLabel').value.trim()));
+ $('cancelLink').onclick=clearLink;
+ $('resetBoard').onclick=()=>{clearLink();notice('Du kannst alle Karten mit der Maus oder dem Finger neu positionieren. Bereits gespeicherte Positionen bleiben bis zum Verschieben erhalten.')};
+ drawLines();drawLinkList();if(selected)selectBoard(selected);
+}
+function drawPreviewBoard(){
+ const b=$('board');if(!b)return;
+ const items=discoveries.filter(x=>x.show_on_board);
+ b.style.touchAction='auto';
+ if(!items.length){b.innerHTML='<p style="padding:24px">Bei diesem simulierten Spielfortschritt sind noch keine Beweisstücke freigeschaltet.</p>';return;}
+ items.forEach((d,i)=>{const v=pos(d,i),n=document.createElement('div');n.className='node ws-preview-node';n.style.left=Math.max(0,Math.min(v.x,b.clientWidth-155))+'px';n.style.top=Math.max(0,Math.min(v.y,b.clientHeight-105))+'px';n.innerHTML='<strong>'+esc(d.label)+'</strong><small>'+esc(d.kind)+'</small>';b.append(n);if(d.image_path){const im=document.createElement('img');im.className='node-photo';im.alt='Bild zu '+d.label;n.insertBefore(im,n.querySelector('strong'));mediaBlob(d.image_path).then(url=>{if(im.isConnected)im.src=url}).catch(()=>{})}});
+ const details=$('boardDetails');if(details)details.textContent='Schreibgeschützte Vorschau: Beweisstücke entsprechend dem simulierten Fortschritt.';
+ ['makeLink','resetBoard','cancelLink','linkFrom','linkTo','linkLabel'].forEach(id=>{const e=$(id);if(e)e.disabled=true});
+ const ll=$('linkList');if(ll)ll.textContent='Persönliche Verbindungen und Notizen sind in dieser Simulation nicht enthalten.';
+}
+function drawLines(){const b=$('board'),svg=$('lines');if(!b||!svg)return;svg.setAttribute('viewBox',`0 0 ${b.clientWidth} ${b.clientHeight}`);svg.replaceChildren();for(const c of connections){let a=b.querySelector('[data-id="'+c.from_discovery_id+'"]'),z=b.querySelector('[data-id="'+c.to_discovery_id+'"]');if(!a||!z)continue;let l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',a.offsetLeft+a.offsetWidth/2);l.setAttribute('y1',a.offsetTop+a.offsetHeight/2);l.setAttribute('x2',z.offsetLeft+z.offsetWidth/2);l.setAttribute('y2',z.offsetTop+z.offsetHeight/2);l.setAttribute('stroke','#773f45');l.setAttribute('stroke-width','3');l.setAttribute('stroke-dasharray','6 4');svg.append(l)}
+ if(linkSource&&linkDrag){let a=b.querySelector('[data-id="'+linkSource+'"]');if(a){const rect=b.getBoundingClientRect(),preview=document.createElementNS('http://www.w3.org/2000/svg','line');preview.classList.add('preview');preview.setAttribute('x1',a.offsetLeft+a.offsetWidth/2);preview.setAttribute('y1',a.offsetTop+a.offsetHeight/2);preview.setAttribute('x2',linkDrag.x-rect.left);preview.setAttribute('y2',linkDrag.y-rect.top);svg.append(preview)}}}
+async function savePosition(id,x,y){try{await refreshSession();let r=await api('/rest/v1/winterstern_board_items?on_conflict=user_id,discovery_id',body('POST',{user_id:session.user.id,discovery_id:id,pos_x:x,pos_y:y},{'Prefer':'resolution=merge-duplicates,return=representation'}));boardItems=boardItems.filter(v=>v.discovery_id!==id);if(r?.[0])boardItems.push(r[0]);}catch(e){notice('Position konnte nicht gespeichert werden: '+e.message,true)}}
+function selectBoard(id){let d=discoveries.find(x=>x.id===id);if(!d)return;document.querySelectorAll('.node').forEach(n=>n.classList.toggle('selected',Number(n.dataset.id)===id));const item=boardItems.find(x=>x.discovery_id===id);$('boardDetails').innerHTML=`<strong>${esc(d.label)}</strong><p class="small">${esc(d.description)}</p><label for="boardNote">Deine Notizen</label><textarea id="boardNote">${esc(item?.note||'')}</textarea><p><button id="saveBoardNote">Notiz speichern</button></p>`;$('saveBoardNote').onclick=()=>safeAction($('saveBoardNote'),async()=>{await refreshSession();const val=$('boardNote').value;const v=pos(d,0);let data=await api('/rest/v1/winterstern_board_items?on_conflict=user_id,discovery_id',{...body('POST',{user_id:session.user.id,discovery_id:id,pos_x:v.x,pos_y:v.y,note:val}),headers:{'Content-Type':'application/json','Prefer':'resolution=merge-duplicates,return=representation'}});boardItems=boardItems.filter(x=>x.discovery_id!==id);if(data?.[0])boardItems.push(data[0]);notice('Notiz gespeichert.')})}
+async function openTab(tab){active=tab;if(!ADMIN_PREVIEW)await loadAll();render();if(tab==='daily')await fillDaily();if(tab==='archive')paintArchiveImages()}
+$('view').addEventListener('change',e=>{if(ADMIN_PREVIEW&&e.target.id==='previewChapter')previewChangeChapter(Number(e.target.value)).catch(err=>notice(err.message,true))});
+$('loginForm').onsubmit=e=>{e.preventDefault();safeAction($('signIn'),auth)};
+$('logout').onclick=async()=>{try{await api('/auth/v1/logout',{method:'POST'})}catch{}session=null;sessionStorage.removeItem('ws_session');$('login').classList.remove('hide');$('app').classList.add('hide');$('status').replaceChildren()};
+$('nav').onclick=e=>{const button=e.target.closest('[data-tab]');if(button)openTab(button.dataset.tab).catch(err=>notice(err.message,true))};
+$('view').onclick=e=>{
+ if(ADMIN_PREVIEW){
+  if(e.target.closest('#previewPrev')){previewChangeChapter(current-1).catch(err=>notice(err.message,true));return;}
+  if(e.target.closest('#previewNext')){previewChangeChapter(current+1).catch(err=>notice(err.message,true));return;}
+  if(e.target.closest('#previewBefore')){previewSolved=false;simulatePreviewState();render();fillDaily().catch(err=>notice(err.message,true));return;}
+  if(e.target.closest('#previewAfter')){previewSolved=true;simulatePreviewState();render();fillDaily().catch(err=>notice(err.message,true));return;}
+ }
+ const b=e.target.closest('[data-chapter],[data-story],[data-media-doc]');if(b?.dataset.chapter){current=Number(b.dataset.chapter);replayChapter=null;render();fillDaily().catch(err=>notice(err.message,true))}if(b?.dataset.story)readStory(Number(b.dataset.story)).catch(err=>notice(err.message,true));if(b?.dataset.mediaDoc)openEvidencePdf(Number(b.dataset.mediaDoc)).catch(err=>notice(err.message,true))};
+(async()=>{try{
+ if(ADMIN_PREVIEW){
+   session=await receivePreviewSession();
+   await init();
+ }else{
+   const raw=sessionStorage.getItem('ws_session');
+   if(!raw)return;
+   session=JSON.parse(raw);const r=await api('/auth/v1/user');session.user=r;await init();
+ }
+}catch(e){session=null;if(!ADMIN_PREVIEW)sessionStorage.removeItem('ws_session');$('login').classList.remove('hide');$('app').classList.add('hide');if(ADMIN_PREVIEW){$('login').innerHTML='<h2>Spieleransicht nicht verfügbar</h2><p>'+esc(e.message)+'</p><p>Bitte melde dich im Spielleitungsbereich an und öffne dort den Reiter „Spieleransicht“.</p>';}}})();
+</script></body></html>

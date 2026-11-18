@@ -1,0 +1,17 @@
+Kapitel 1 – Finale Texte und Spielablauf
+=======================================
+Die zum Kopieren geeigneten Texte sind als separate Datei neben dieser Website-ZIP ausgegeben.
+
+Eingaben in Supabase / Spielleitung:
+Titel: Die Akte, die keiner haben wollte
+Rätselantwort: SCHLUESSEL
+Päckchensymbol: Schlüssel
+Ermittlungsauftrag: Ordne die fünf Dokumente anhand der sechs Hinweise den Schubladen 1 bis 5 zu. Jede Mappe darf genau einmal vorkommen. Prüfe anschließend die vollständige Zuordnung.
+
+Kapitel 1: kein Beweiswand-Eintrag, keine Fundbestätigung.
+Am Ende das Schlüssel-Päckchen für Tag 2 bereitlegen, erst dann öffnen.
+
+WICHTIG: Die Texte liegen NICHT automatisch in Supabase. Sie müssen in der Spielleitung gespeichert werden.
+Alte „evidence_confirmed“-Fundkarten und Szenen für alle Kapitel in Supabase prüfen und manuell auf „solved“ umstellen oder entfernen. Die neue Spieleroberfläche verwendet keine Fundbestätigungs-Schaltfläche mehr.
+
+Die Server-Funktion winterstern_start_chapter wurde nicht verändert. Falls sie nach einer Fundbestätigung verlangt, muss ihre Berechtigungslogik in Supabase einmalig angepasst werden. Ohne Live-Zugriff kann das nicht garantiert werden.
